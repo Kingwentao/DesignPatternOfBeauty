@@ -1,5 +1,6 @@
 package Basic2.service;
 
+import Basic2.exception.NoSufficientBalanceException;
 import Basic2.repository.*;
 
 import java.math.BigDecimal;
@@ -33,7 +34,7 @@ public class VirtualWalletService {
      * @param walletId 钱包id
      * @param amount 出账额
      */
-    public void debit(Long walletId, BigDecimal amount) {
+    public void debit(Long walletId, BigDecimal amount) throws NoSufficientBalanceException {
         VirtualWalletEntity walletEntity = walletRepo.getWalletEntity(walletId);
         BigDecimal balance = walletEntity.getBalance();
         if (balance.compareTo(amount) < 0) {
@@ -44,7 +45,7 @@ public class VirtualWalletService {
 
     /**
      * 入账
-     * @param walletId 钱包id
+     * @param walletId 钱包i
      * @param amount 入账额
      */
     public void credit(Long walletId, BigDecimal amount) {
