@@ -12,7 +12,7 @@ public class Alert {
     private List<AlertHandler> alertHandlers = new ArrayList<>();
 
     public void addAlertHandler(AlertHandler alertHandler){
-        this.alertHandlers = alertHandlers;
+        this.alertHandlers.add(alertHandler);
     }
 
     public void check(ApiStateInfo apiStateInfo){

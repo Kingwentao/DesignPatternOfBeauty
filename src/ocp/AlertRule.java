@@ -7,7 +7,7 @@ package ocp;
  */
 public class AlertRule {
 
-    public Object getMatchedRule(String api) {
-        return null;
+    public AlertRule getMatchedRule(String api) {
+
     }
 }
