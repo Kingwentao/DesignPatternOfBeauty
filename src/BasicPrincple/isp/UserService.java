@@ -17,7 +17,7 @@ interface UserService {
 
     boolean login(String cellphone, String password);
 
-    UserInfo getUserInfoById(long id);
+  //  UserInfo getUserInfoById(long id);
 
-    UserInfo getUserInfoByCellphone(String cellphone);
+  //  UserInfo getUserInfoByCellphone(String cellphone);
 }

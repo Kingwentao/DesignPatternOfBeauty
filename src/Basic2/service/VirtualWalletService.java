@@ -26,7 +26,8 @@ public class VirtualWalletService {
     }
 
     public BigDecimal getBalance(Long walletId) {
-        return virtualWalletRepo.getBalance(walletId);
+      //  return virtualWalletRepo.getBalance(walletId);
+        return null;
     }
 
     /**
@@ -38,7 +39,7 @@ public class VirtualWalletService {
         VirtualWalletEntity walletEntity = walletRepo.getWalletEntity(walletId);
         BigDecimal balance = walletEntity.getBalance();
         if (balance.compareTo(amount) < 0) {
-            throw new NoSufficientBalanceException();
+          //  throw new NoSufficientBalanceException();
         }
         walletRepo.updateBalance(walletId, balance.subtract(amount));
     }
@@ -60,20 +61,20 @@ public class VirtualWalletService {
      * @param toWalletId
      * @param amount
      */
-    public void transfer(Long fromWalletId, Long toWalletId, BigDecimal amount) {
-        VirtualWalletTransactionEntity transactionEntity = new VirtualWalletTransactionEntity();
-        transactionEntity.setAmount(amount);
-        transactionEntity.setCreateTime(System.currentTimeMillis());
-        transactionEntity.setFromWalletId(fromWalletId);
-        transactionEntity.setToWalletId(toWalletId);
-        transactionEntity.setStatus(Status.TO_BE_EXECUTED);
-        Long transactionId = transactionRepo.saveTransaction(transactionEntity);
-        try {
-            debit(fromWalletId, amount);
-            credit(toWalletId, amount);
-        } catch (InsufficientBalanceException e) {
-            transactionRepo.updateStatus(transactionId, Status.CLOSED); ...rethrow exception e...} catch (Exception e) {
-            transactionRepo.updateStatus(transactionId, Status.FAILED); ...rethrow exception e...}
-        transactionRepo.updateStatus(transactionId, Status.EXECUTED);
-    }
+//    public void transfer(Long fromWalletId, Long toWalletId, BigDecimal amount) {
+//        VirtualWalletTransactionEntity transactionEntity = new VirtualWalletTransactionEntity();
+//        transactionEntity.setAmount(amount);
+//        transactionEntity.setCreateTime(System.currentTimeMillis());
+//        transactionEntity.setFromWalletId(fromWalletId);
+//        transactionEntity.setToWalletId(toWalletId);
+//        transactionEntity.setStatus(Status.TO_BE_EXECUTED);
+//        Long transactionId = transactionRepo.saveTransaction(transactionEntity);
+//        try {
+//            debit(fromWalletId, amount);
+//            credit(toWalletId, amount);
+//        } catch (InsufficientBalanceException e) {
+//            transactionRepo.updateStatus(transactionId, Status.CLOSED); ...rethrow exception e...} catch (Exception e) {
+//            transactionRepo.updateStatus(transactionId, Status.FAILED); ...rethrow exception e...}
+//        transactionRepo.updateStatus(transactionId, Status.EXECUTED);
+//    }
 }

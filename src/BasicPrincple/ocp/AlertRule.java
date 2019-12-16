@@ -8,6 +8,6 @@ package BasicPrincple.ocp;
 public class AlertRule {
 
     public AlertRule getMatchedRule(String api) {
-
+        return null;
     }
 }

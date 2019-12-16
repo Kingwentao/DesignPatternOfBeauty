@@ -17,7 +17,7 @@ class AuthToken {
 
     //对字符串通过加密算法加密生成 token
     public static AuthToken generate(String originalUrl, String appId, String password, long timestamp) {
-
+        return null;
     }
 
 

@@ -50,23 +50,23 @@ public class VirtualWallet {
     }
 
     public void debit(BigDecimal amount) {
-        if (this.balance.compareTo(amount) < 0) {
-            throw new InsufficientBalanceException();
-        }
-        this.balance.subtract(amount);
+//        if (this.balance.compareTo(amount) < 0) {
+//            throw new InsufficientBalanceException();
+//        }
+//        this.balance.subtract(amount);
     }
 
     public void credit(BigDecimal amount) {
-        if (amount.compareTo(BigDecimal.ZERO) < 0) {
-            throw new InvalidAmountException("eee");
-        } this.balance.add(amount);
+//        if (amount.compareTo(BigDecimal.ZERO) < 0) {
+//            throw new InvalidAmountException("eee");
+//        } this.balance.add(amount);
     }
 
     public BigDecimal getAvailableBalance() {
         BigDecimal totalAvailableBalance = this.balance.subtract(this.frozenAmount);
-        if (isAllowedOverdraft) {
-            totalAvailableBalance += this.overdraftAmount;
-        }
+//        if (isAllowedOverdraft) {
+//            totalAvailableBalance += this.overdraftAmount;
+//        }
         return totalAvailableBalance;
     }
 
