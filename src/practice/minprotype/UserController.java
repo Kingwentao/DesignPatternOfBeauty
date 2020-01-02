@@ -1,4 +1,4 @@
-package BasicPrincple.minprotype;
+package practice.minprotype;
 
 import Basic1.controller.UserVo;
 

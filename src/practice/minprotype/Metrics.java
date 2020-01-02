@@ -1,4 +1,4 @@
-package BasicPrincple.minprotype;
+package practice.minprotype;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +25,7 @@ public class Metrics {
 
     public void recordResponseTime(String apiName,double responseTime){
         responseTimes.putIfAbsent(apiName,new ArrayList<>());
-        timestamps.get(apiName).add(responseTime)
+        timestamps.get(apiName).add(responseTime);
     }
 
     public void recordTimeStamp(String apiName,double timeStamp){
