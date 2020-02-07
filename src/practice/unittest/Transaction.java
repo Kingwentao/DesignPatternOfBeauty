@@ -52,7 +52,7 @@ public class Transaction {
         this.productId = productId;
         this.orderId = orderId;
         this.status = STATUS.TO_BE_EXECUTD;
-        this.createTimestamp = System.currentTimestamp();
+        this.createTimestamp = System.currentTimeMillis();
     }
 
 
@@ -64,11 +64,11 @@ public class Transaction {
         if (preAssignedId != null && !preAssignedId.isEmpty()) {
             this.id = preAssignedId;
         } else {
-            this.id = IdGenerator.generateTransactionId();
+           // this.id = IdGenerator.generateTransactionId();
         }
-        if (!this.id.startWith("t_")) {
-            this.id = "t_" + preAssignedId;
-        }
+//        if (!this.id.startWith("t_")) {
+//            this.id = "t_" + preAssignedId;
+//        }
     }
 
     /**
@@ -95,8 +95,9 @@ public class Transaction {
      * @return
      */
     protected boolean isExpired() {
-        long executionInvokedTimestamp = System.currentTimestamp();
-        return executionInvokedTimestamp - createdTimestamp > 14d ays;
+        long executionInvokedTimestamp = System.currentTimeMillis();
+        long  createdTimestamp = 1000;
+        return executionInvokedTimestamp - createdTimestamp > 14d;
     }
 
     public boolean execute() throws InvalidTransactionException {
