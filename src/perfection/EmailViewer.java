@@ -22,6 +22,10 @@ public class EmailViewer implements StatViewer {
         this.emailSender = emailSender;
     }
 
+    public EmailViewer(List<String> emailAddress){
+        toAddresses.addAll(emailAddress);
+    }
+
     public void addToAddress(String address) {
         toAddresses.add(address);
     }
