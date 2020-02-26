@@ -20,7 +20,8 @@ public class PrototypeDemo {
         //要先保留一份之前的数据，避免因为不同步导致的之前数据既不完全是最新的也不是旧的那一份
         // HashMap<String, SearchWord> newKeywords = new LinkedHashMap<>();
 
-        //原型模式就这么简单，拷贝已有对象的数据，更新少量差值
+        //原型模式就这么简单，拷贝已有对象的数据，更新少量差值( 但使用clone方法 会存在问题，由于clone是浅拷贝，浅拷贝只会复制图中的索引（散列表），
+        // 不会复制数据（SearchWord 对象）本身，所以得到的结果依然可能是新旧混合的数据 ===》 使用深拷贝)
         HashMap<String, SearchWord> newKeywords = (HashMap<String, SearchWord>) currentKeywords.clone();
 
 
