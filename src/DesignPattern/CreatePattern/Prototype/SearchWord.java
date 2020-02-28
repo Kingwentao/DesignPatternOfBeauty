@@ -7,18 +7,16 @@ package DesignPattern.CreatePattern.Prototype;
  */
 public class SearchWord {
 
-    public String getKeyword() {
-        return null;
-    }
 
-    public long getLastUpdateTime() {
-        return 1;
-    }
-
-    public void setLastUpdateTime(long lastUpdateTime) {
-
-    }
     int count;
+    long lastUpdateTime;
+    String keyWord;
+
+    public SearchWord(String keyWord, int count, long lastUpdateTime) {
+        this.count = count;
+        this.lastUpdateTime = lastUpdateTime;
+        this.keyWord = keyWord;
+    }
 
     public int getCount() {
         return count;
@@ -26,5 +24,21 @@ public class SearchWord {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
+    public void setLastUpdateTime(long lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
+    }
+
+    public String getKeyword() {
+        return keyWord;
+    }
+
+    public void setKeyWord(String keyWord) {
+        this.keyWord = keyWord;
     }
 }

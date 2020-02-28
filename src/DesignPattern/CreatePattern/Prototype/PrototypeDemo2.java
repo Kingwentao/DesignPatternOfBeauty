@@ -21,7 +21,8 @@ public class PrototypeDemo2 {
         HashMap<String, SearchWord> newKeywords = new HashMap<>();
         for (HashMap.Entry<String, SearchWord> e : currentKeywords.entrySet()) {
             SearchWord searchWord = e.getValue();
-            SearchWord newSearchWord = new SearchWord(searchWord.getKeyword(), searchWord.getCount(), searchWord.getLastUpdateTime();
+            SearchWord newSearchWord = new SearchWord(searchWord.getKeyword(), searchWord.getCount(),
+                    searchWord.getLastUpdateTime());
             newKeywords.put(e.getKey(), newSearchWord);
         }
 
@@ -30,7 +31,7 @@ public class PrototypeDemo2 {
             SearchWord searchWord = e.getValue();
             try {
                 SearchWord newSearchWord = (SearchWord) deepCopy(searchWord);
-                newKeywords.put(e.getKey(),newSearchWord)
+                newKeywords.put(e.getKey(),newSearchWord);
             } catch (IOException ex) {
                 ex.printStackTrace();
             } catch (ClassNotFoundException ex) {
