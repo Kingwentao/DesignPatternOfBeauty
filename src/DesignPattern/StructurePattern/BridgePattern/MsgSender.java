@@ -1,4 +1,4 @@
-package DesignPattern.BridgePattern;
+package DesignPattern.StructurePattern.BridgePattern;
 
 /**
  * Created by WenTaoKing on 2020/2/28

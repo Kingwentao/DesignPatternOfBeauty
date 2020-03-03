@@ -1,4 +1,4 @@
-package DesignPattern.BridgePattern;
+package DesignPattern.StructurePattern.BridgePattern;
 
 import java.util.List;
 
