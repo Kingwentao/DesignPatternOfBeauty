@@ -3,7 +3,8 @@ package DesignPattern.StructurePattern.AdapterDesign;
 /**
  * author: WentaoKing
  * created on: 2020/3/3
- * description: 类适配器：基于继承
+ * description: Adaptor 将 Adaptee 转化成一组符合 ITarget 接口定义的接口
+ *  类适配器：基于继承
  */
 public class Adaptor extends Adaptee implements ITarget{
 
