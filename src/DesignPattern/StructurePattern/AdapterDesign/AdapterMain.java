@@ -26,8 +26,12 @@ public class AdapterMain {
          * 那我们推荐使用对象适配器，因为组合结构相对于继承更加灵活。
          */
 
+        //3.替换依赖的外部系统
         //借助BAdaptor，Demo的代码中，调用IA接口的地方都无需改动
         //只需要将BAdaptor如下注入到Demo即可
         Demo d = new Demo(new BAdapter(new B()));
+
+        //4.兼容老版本的接口
+
     }
 }
