@@ -7,7 +7,7 @@ import java.util.Iterator;
 /**
  * author: WentaoKing
  * created on: 2020/3/5
- * description:
+ * description: 兼容老版本接口
  */
 public class Collections {
     public static Enumeration enumeration(final Collection c){
