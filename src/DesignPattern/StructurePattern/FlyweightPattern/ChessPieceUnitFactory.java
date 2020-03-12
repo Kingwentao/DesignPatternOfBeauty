@@ -6,10 +6,11 @@ import java.util.Map;
 /**
  * author: WentaoKing
  * created on: 2020/3/11
- * description:
+ * description: 享元模式棋子的工厂类
  */
 public class ChessPieceUnitFactory {
 
+    //缓存已经创建过的享元对象，来达到复用的目的。
     private static final Map<Integer, ChessPieceUnit> chessPieces = new HashMap<>();
 
     static {
