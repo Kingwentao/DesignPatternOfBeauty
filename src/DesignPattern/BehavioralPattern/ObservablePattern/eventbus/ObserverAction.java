@@ -16,6 +16,7 @@ class ObserverAction {
 
     ObserverAction(Object target,Method method){
      //   this.target = Preconditions.checkNotNull(target);
+        this.target = target;
         this.method = method;
         this.method.setAccessible(true);
     }
