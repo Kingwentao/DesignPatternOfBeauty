@@ -1,4 +1,6 @@
-package DesignPattern.BehavioralPattern.StrategyPattern;
+package DesignPattern.BehavioralPattern.StrategyPattern.basic;
+
+import DesignPattern.BehavioralPattern.StrategyPattern.basic.Strategy;
 
 /**
  * author: WentaoKing

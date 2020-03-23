@@ -1,4 +1,4 @@
-package DesignPattern.BehavioralPattern.StrategyPattern;
+package DesignPattern.BehavioralPattern.StrategyPattern.basic;
 
 /**
  * author: WentaoKing

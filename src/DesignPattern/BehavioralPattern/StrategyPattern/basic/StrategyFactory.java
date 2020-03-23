@@ -1,4 +1,8 @@
-package DesignPattern.BehavioralPattern.StrategyPattern;
+package DesignPattern.BehavioralPattern.StrategyPattern.basic;
+
+import DesignPattern.BehavioralPattern.StrategyPattern.basic.ConcreteStrategyA;
+import DesignPattern.BehavioralPattern.StrategyPattern.basic.ConcreteStrategyB;
+import DesignPattern.BehavioralPattern.StrategyPattern.basic.Strategy;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +15,7 @@ import java.util.Map;
  */
 public class StrategyFactory {
 
-    private static final Map<String,Strategy> strategies = new HashMap<>();
+    private static final Map<String, Strategy> strategies = new HashMap<>();
 
     static {
         strategies.put("A",new ConcreteStrategyA());
