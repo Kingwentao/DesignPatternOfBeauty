@@ -7,13 +7,9 @@ package DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern;
  */
 public class HandlerB extends Handler {
     @Override
-    public void handle() {
+    public boolean doHandle() {
         System.out.println("i am a handler B");
         boolean handled = false;
-        //
-
-        if (!handled && successor!=null){
-            successor.handle();
-        }
+        return handled;
     }
 }

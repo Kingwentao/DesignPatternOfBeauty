@@ -3,7 +3,7 @@ package DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern;
 /**
  * author: WentaoKing
  * created on: 2020/3/25
- * description: 处理器链
+ * description: 处理器链(链表实现)
  */
 public class HandlerChain {
 
