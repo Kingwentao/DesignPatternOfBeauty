@@ -1,4 +1,4 @@
-package DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern;
+package DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern.base;
 
 /**
  * author: WentaoKing
@@ -14,7 +14,7 @@ public class HandlerChain {
      * 添加处理器
      * @param handler
      */
-    public void addHandler(Handler handler){
+    void addHandler(Handler handler){
         handler.setSuccessor(null);
         if (head == null){
             head = handler;
@@ -25,7 +25,7 @@ public class HandlerChain {
         tail = handler;
     }
 
-    public void handle(){
+    void handle(){
         if (head!=null){
             head.handle();
         }

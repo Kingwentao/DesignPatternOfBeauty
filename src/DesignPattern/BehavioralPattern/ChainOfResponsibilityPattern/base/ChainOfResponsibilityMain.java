@@ -1,4 +1,6 @@
-package DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern;
+package DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern.base;
+
+import DesignPattern.BehavioralPattern.ChainOfResponsibilityPattern.base.*;
 
 /**
  * author: WentaoKing
