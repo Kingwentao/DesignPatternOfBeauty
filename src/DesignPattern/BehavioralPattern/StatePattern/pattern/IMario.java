@@ -10,12 +10,12 @@ import DesignPattern.BehavioralPattern.StatePattern.State;
 public interface IMario {
     State getName();
 
-    void obtainMushRoom();
+    void obtainMushRoom(MarioStateMachine stateMachine);
 
-    void obtainCape();
+    void obtainCape(MarioStateMachine stateMachine);
 
-    void obtainFireFlower();
+    void obtainFireFlower(MarioStateMachine stateMachine);
 
-    void meetMonster();
+    void meetMonster(MarioStateMachine stateMachine);
 
 }

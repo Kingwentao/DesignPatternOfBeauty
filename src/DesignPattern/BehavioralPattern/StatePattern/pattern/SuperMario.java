@@ -9,10 +9,13 @@ import DesignPattern.BehavioralPattern.StatePattern.State;
  */
 public class SuperMario implements IMario {
 
-    private MarioStateMachine stateMachine;
+    private static final SuperMario instance = new SuperMario();
 
-    SuperMario(MarioStateMachine stateMachine) {
-        this.stateMachine = stateMachine;
+    private SuperMario() {
+    }
+
+    public static SuperMario getInstance() {
+        return instance;
     }
 
     @Override
@@ -21,25 +24,25 @@ public class SuperMario implements IMario {
     }
 
     @Override
-    public void obtainMushRoom() {
+    public void obtainMushRoom(MarioStateMachine stateMachine) {
         //nop
     }
 
     @Override
-    public void obtainCape() {
-        stateMachine.setCurrentState(new CapeMario(stateMachine));
+    public void obtainCape(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(CapMario.getInstance());
         stateMachine.setScore(stateMachine.getScore() + 200);
     }
 
     @Override
-    public void obtainFireFlower() {
-        stateMachine.setCurrentState(new FireMario(stateMachine));
+    public void obtainFireFlower(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(FireMario.getInstance());
         stateMachine.setScore(stateMachine.getScore() + 300);
     }
 
     @Override
-    public void meetMonster() {
-        stateMachine.setCurrentState(new SmallMario(stateMachine));
+    public void meetMonster(MarioStateMachine stateMachine) {
+        stateMachine.setCurrentState(SuperMario.getInstance());
         stateMachine.setScore(stateMachine.getScore() - 100);
     }
 }

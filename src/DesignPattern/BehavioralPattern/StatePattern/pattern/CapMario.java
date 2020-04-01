@@ -4,22 +4,22 @@ import DesignPattern.BehavioralPattern.StatePattern.State;
 
 /**
  * author: WentaoKing
- * created on: 2020/3/31
- * description:
+ * created on: 2020/4/1
+ * description: 斗篷马里奥
  */
-public class FireMario implements IMario {
+public class CapMario implements IMario {
 
-    private static final FireMario instance = new FireMario();
+    private static final CapMario instance = new CapMario();
 
-    private FireMario(){ }
+    private CapMario(){ }
 
-    public static FireMario getInstance(){
+    public static CapMario getInstance(){
         return instance;
     }
 
     @Override
     public State getName() {
-        return State.FIRE;
+        return State.CAPE;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class FireMario implements IMario {
 
     @Override
     public void meetMonster(MarioStateMachine stateMachine) {
-        stateMachine.setScore(stateMachine.getScore() - 300);
+        stateMachine.setScore(stateMachine.getScore() - 200);
         stateMachine.setCurrentState(SmallMario.getInstance());
     }
 }
