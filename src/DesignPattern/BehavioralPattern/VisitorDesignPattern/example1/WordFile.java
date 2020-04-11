@@ -1,4 +1,4 @@
-package DesignPattern.BehavioralPattern.VisitorDesignPattern;
+package DesignPattern.BehavioralPattern.VisitorDesignPattern.example1;
 
 /**
  * author: WentaoKing

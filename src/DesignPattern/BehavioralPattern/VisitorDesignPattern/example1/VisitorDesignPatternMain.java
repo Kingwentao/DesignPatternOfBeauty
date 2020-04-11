@@ -1,4 +1,4 @@
-package DesignPattern.BehavioralPattern.VisitorDesignPattern;
+package DesignPattern.BehavioralPattern.VisitorDesignPattern.example1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * created on: 2020/4/9
  * description:
  */
-public class ToolApplication {
+public class VisitorDesignPatternMain {
 
     public static void main(String[] args) {
         Extractor extractor = new Extractor();
