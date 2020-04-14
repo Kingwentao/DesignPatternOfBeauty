@@ -1,5 +1,7 @@
 package DesignPattern.BehavioralPattern.MementoPattern.normal;
 
+import DesignPattern.BehavioralPattern.MementoPattern.optimization.Snapshot;
+
 import java.util.Stack;
 
 /**
@@ -9,17 +11,14 @@ import java.util.Stack;
  */
 public class SnapshotHolder {
 
-    private Stack<InputText> snapshots = new Stack<>();
+    private Stack<Snapshot> snapshots = new Stack<>();
 
-    public InputText popSnapshot() {
+    public Snapshot popSnapshot() {
         return snapshots.pop();
     }
 
-    public void pushSnapshot(InputText inputText) {
-        InputText deepClonedInputText = new InputText();
-        deepClonedInputText.setText(inputText.getText());
-        snapshots.push(deepClonedInputText);
+    public void pushSnapshot(Snapshot snapshot) {
+        snapshots.push(snapshot);
     }
-
 
 }
