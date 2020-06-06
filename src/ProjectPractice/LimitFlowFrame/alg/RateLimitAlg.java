@@ -1,6 +1,7 @@
 package ProjectPractice.LimitFlowFrame.alg;
 
 import jdk.nashorn.internal.runtime.regexp.joni.exception.InternalException;
+import org.apache.commons.lang3.time.StopWatch;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -17,17 +18,16 @@ import java.util.concurrent.locks.ReentrantLock;
 public class RateLimitAlg {
 
     private static final long TRY_LOCK_TIMEOUT = 200L; // 200ms.
-    private Stopwatch stopwatch;
+    private StopWatch stopwatch;
     private AtomicInteger currentCount = new AtomicInteger(0);
     private final int limit;
     private Lock lock = new ReentrantLock();
 
     public RateLimitAlg(int limit) {
-        this(limit, Stopwatch.createStarted());
+        this(limit, StopWatch.createStarted());
     }
 
-    @VisibleForTesting
-    protected RateLimitAlg(int limit, Stopwatch stopwatch) {
+    protected RateLimitAlg(int limit, StopWatch stopwatch) {
         this.limit = limit;
         this.stopwatch = stopwatch;
     }
@@ -44,13 +44,15 @@ public class RateLimitAlg {
                         currentCount.set(0);
                         stopwatch.reset();
                     }
+                    updatedCount = currentCount.incrementAndGet();
+                    return updatedCount <= limit
                 } finally {
                     lock.unlock();
                 }
             } else {
                 throw new InternalException("tryAcquire() wait lock too long:" + TRY_LOCK_TIMEOUT + "ms");
             }
-        } catch (InternalException e) {
+        } catch (InternalException | InterruptedException e) {
             throw new InternalException("tryAcquire() is interrupted by lock-time-out.");
         }
     }
