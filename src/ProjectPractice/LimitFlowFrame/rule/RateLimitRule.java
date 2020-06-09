@@ -6,4 +6,6 @@ package ProjectPractice.LimitFlowFrame.rule;
  * description: 限流规则的接口
  */
 public interface RateLimitRule {
+
+    ApiLimit getLimit(String appId, String url);
 }

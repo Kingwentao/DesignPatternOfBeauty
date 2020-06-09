@@ -10,7 +10,7 @@ public class ApiLimit {
         return null;
     }
 
-    public Object getLimit() {
-        return null;
+    public int getLimit() {
+        return 0;
     }
 }

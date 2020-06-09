@@ -62,4 +62,39 @@
 
 ### 代码实现
 
-1
+1. v1版本：
+
+```
+
+// 重构前：
+com.xzg.ratelimiter
+  --RateLimiter
+com.xzg.ratelimiter.rule
+  --ApiLimit
+  --RuleConfig
+  --RateLimitRule
+com.xzg.ratelimiter.alg
+  --RateLimitAlg
+```
+2. 提升扩展性，重构后的v2版本
+
+```
+// 重构后：
+com.xzg.ratelimiter
+  --RateLimiter(有所修改)
+com.xzg.ratelimiter.rule
+  --ApiLimit(不变)
+  --RuleConfig(不变)
+  --RateLimitRule(抽象接口)
+  --TrieRateLimitRule(实现类，就是重构前的RateLimitRule）
+com.xzg.ratelimiter.rule.parser
+  --RuleConfigParser(抽象接口)
+  --YamlRuleConfigParser(Yaml格式配置文件解析类)
+  --JsonRuleConfigParser(Json格式配置文件解析类)
+com.xzg.ratelimiter.rule.datasource
+  --RuleConfigSource(抽象接口)
+  --FileRuleConfigSource(基于本地文件的配置类)
+com.xzg.ratelimiter.alg
+  --RateLimitAlg(抽象接口)
+  --FixedTimeWinRateLimitAlg(实现类，就是重构前的RateLimitAlg)
+```

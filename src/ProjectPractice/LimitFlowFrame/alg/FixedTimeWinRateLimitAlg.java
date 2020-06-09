@@ -15,7 +15,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 实现了最简单的固定时间窗口限流算法。
  * 每个接口都要在内存中对应一个 RateLimitAlg 对象，记录在当前时间窗口内已经被访问的次数
  */
-public class FixedTimeWinRateLimitAlg implements RateLimitAlg{
+public class FixedTimeWinRateLimitAlg implements RateLimitAlg {
 
     private static final long TRY_LOCK_TIMEOUT = 200L; // 200ms.
     private StopWatch stopwatch;
