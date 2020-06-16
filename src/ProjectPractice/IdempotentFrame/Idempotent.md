@@ -91,3 +91,8 @@
 
 #### mvp-v1版本
 
+- Idempotence 
+- IdempotenceStorage 幂等号存储类接口
+- RedisClusterIdempotenceStorage 幂等号redis存储类
+- IdempotenceIdGenerator 幂等号生成
+
