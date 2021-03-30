@@ -20,9 +20,10 @@ public class DynamicProxyMain {
     public static void main(String[] args) {
         MetricsCollectorProxy proxy = new MetricsCollectorProxy();
         IUserController userController = (IUserController) proxy.createProxy(new UserController());
-        //
+
         String password = "jwt";
         String telephone = "12345";
+        //使用代理类调用登录
         userController.login(telephone, password);
     }
 

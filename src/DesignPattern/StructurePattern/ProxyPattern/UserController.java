@@ -11,6 +11,7 @@ public class UserController implements IUserController{
     @Override
     public UserVo login(String telephone, String password) {
         //...省略其他属性和方法...
+        System.out.println(telephone + "is login" + "password: "+password);
         return null;
     }
 
